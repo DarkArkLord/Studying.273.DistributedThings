@@ -1,0 +1,27 @@
+# https://www.dmosk.ru/miniinstruktions.php?mini=postgresql-replication-docker
+
+services:
+
+  postgresql_01:
+    image: postgres
+    container_name: postgresql_01
+    restart: always
+    volumes:
+      - ./psql_1/:/var/lib/postgresql/data
+    ports:
+      - 6601:5432
+    environment:
+      POSTGRES_PASSWORD: pospas
+
+  postgresql_02:
+    image: postgres
+    container_name: postgresql_02
+    restart: always
+    volumes:
+      - ./psql_2/:/var/lib/postgresql/data
+    ports:
+      - 6602:5432
+    environment:
+      POSTGRES_PASSWORD: pospas
+      
+      
