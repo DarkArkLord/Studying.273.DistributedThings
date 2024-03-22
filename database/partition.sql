@@ -14,9 +14,9 @@ CREATE TABLE partition_test_2 PARTITION OF partition_test_main
 CREATE TABLE partition_test_3 PARTITION OF partition_test_main
     FOR VALUES FROM (666) TO (1001);
 
-INSERT INTO partition_test_main(value)
-SELECT floor(random() * 1000 + 1)::int AS value
-FROM generate_series(1, 1000)
+--INSERT INTO partition_test_main(value)
+--SELECT floor(random() * 1000 + 1)::int AS value
+--FROM generate_series(1, 1000)
 
 SELECT * FROM partition_test_main
 
